@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, request
 app = Flask(__name__)
 from flask import render_template
 
@@ -20,13 +20,15 @@ def report_bullying():
 def view_report_bullying():
     return render_template('view-bullying-reports.html', reports=reports) 
 
-@app.route("/api/submit-report")
+@app.route("/api/submit-report", methods=['POST'])
 def handle_report_submit():
-    print 'report submitted'
+    data = request.form.to_dict()
+    print data
+    reports.append(data)
     return 'report submitted'
 
 # State
-reports = ['report 1', 'report 2']
+reports = []
 
 
 
