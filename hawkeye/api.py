@@ -15,8 +15,9 @@ def homepage():
     '''
 @app.route("/report-bullying")
 def report_bullying():
-    rand_num = int(round(random.random() * 10000))
-    return render_template('report-bullying.html', id=rand_num)
+    user_id = int(round(random.random() * 10000))
+    form_id = int(round(random.random() * 10000000000))
+    return render_template('report-bullying.html', user_id=user_id, form_id=form_id)
 
 @app.route("/view-bullying-reports")
 def view_report_bullying():
@@ -30,7 +31,7 @@ def handle_report_submit():
 #        id: data.id
 #    }
     reports.append(data)
-    return 'report submitted'
+    return 'Thank you for submitting a report, it has been forwarded anonymously to your counselor'
 
 # State
 reports = []
