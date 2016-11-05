@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Hawkeye Anonymous Bully Reporter Login</title>
+	<link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet" media="screen">
+	<script src="https://use.fontawesome.com/f902328bfc.js"></script>
+	<link href="{{ url_for('static', filename='css/hawkeye.css') }}" rel="stylesheet">
+</head>
+<body>
+	<div class="container homepage">
+	<h1>Hawkeye Anonymous Bully Reporter</h1>
+	<br/>
+	<br/>
+	<div class="row">
+		<div class="col-md-offset-3 col-md-6">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h2><i class="fa fa-graduation-cap" aria-hidden="true"></i> Login to review students' reports</h2>
+				</div>
+				<div class="panel-body">
+					<form>
+						<div class="form-group">
+							<label for="user-id">Email:</label>
+							<input type="text" id="email" class="form-control" placeholder="counselor@example.com" value="counselor@example.com"/>
+						</div>
+						<div class="form-group">
+							<label for="password">Password:</label>
+							<input type="password" class="form-control" id="password" value="*****"/>
+						</div>
+						<a href="/view-bullying-reports" class="btn btn-success btn-lg">Login</a>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div><!-- end container -->
+	<footer class="footer">
+      	<div class="container">
+	        <p class="text-muted">
+	        Made by <span class="team-yellow">Team Yellow</span>:
+			<br/>
+			Dominic, Justin, Kyle, Lawrence, Michelle, Victoria, David, Geoff, Nora, and Ms. Rickey</p>
+			</p>
+		</div>
+    </footer>
+</body>
+</html>
+
