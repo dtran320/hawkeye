@@ -1,0 +1,18 @@
+.messages-container {
+	padding: 50px;
+}
+
+.message-view {
+	background: green;
+	height: 550px;
+}
+
+.message-form {
+	position: absolute;
+	top: 600px;
+}
+
+.upload {
+	height: 100px;
+	background: green;
+}

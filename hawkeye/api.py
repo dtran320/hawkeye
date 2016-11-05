@@ -26,7 +26,7 @@ def view_report_bullying():
 @app.route("/api/submit-report", methods=['POST'])
 def handle_report_submit():
     data = request.form.to_dict()
-    print data
+    print (data)
 #    new_report = {
 #        id: data.id
 #    }
