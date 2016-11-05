@@ -29,14 +29,9 @@ def submit_report():
 def view_bullying_reports():
     return render_template('view-bullying-reports.html', reports=reports) 
 
-
 @app.route('/counselors/login/')
 def counselors_login():
     return render_template('counselors-login.html')
-
-@app.route("/view-bullying-reports")
-def view_report_bullying():
-    return render_template('view-bullying-reports.html', reports=reports)
 
 @app.route("/api/submit-report", methods=['POST'])
 def handle_report_submit():
