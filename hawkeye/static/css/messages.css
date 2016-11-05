@@ -29,6 +29,10 @@ ul.reports-sidebar li {
 	background: #f5f5f5;
 }
 
+.selected {
+	background: #ADD8E6;
+}
+
 ul.chat {
 	list-style: none;
 }
@@ -39,4 +43,19 @@ ul.chat {
 	padding: 20px; 
 	margin-bottom: 10px;
 	clear: both;
+}
+
+.student-message {
+	margin-right: 100px;
+	background-colo
+}
+
+.counselor-message {
+	margin-left: 100px;
+	text-align: right;
+	background: #
+}
+
+.report-chat {
+	display: none;
 }
