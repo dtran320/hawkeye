@@ -4,6 +4,10 @@
 	margin-bottom: 50px;
 }
 
+.homepage h1 a {
+	color: #aa0000;
+}
+
 .team-yellow {
 	color: #CCCC00;
 	font-weight: bold;

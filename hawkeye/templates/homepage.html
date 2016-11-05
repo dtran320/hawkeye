@@ -1,59 +1,35 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Hawkeye Anonymous Bully Reporter</title>
-	<link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet" media="screen">
-	<script src="https://use.fontawesome.com/f902328bfc.js"></script>
-	<link href="{{ url_for('static', filename='css/hawkeye.css') }}" rel="stylesheet">
-</head>
-<body>
-	<div class="container homepage">
-		<h1>Hawkeye Anonymous Bully Reporter</h1>
-		<br/>
-		<br/>
-		<div class="row">
-			<div class="col-md-6">
-				<div class="panel panel-default">
-					<div class="panel-heading">
-						<h2><i class="fa fa-graduation-cap" aria-hidden="true"></i> Students</h2>
-					</div>
-					<div class="panel-body">
-						<a href="/students/login/" class="btn btn-primary btn-lg">Student Login</a>
-						<a href="/students/register/" class="btn btn-success btn-lg">Sign up</a>
-					</div>
+{% extends "layout.html" %}
+{% block content %}
+	<div class="row">
+		<div class="col-md-6">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h2><i class="fa fa-graduation-cap" aria-hidden="true"></i> Students</h2>
+				</div>
+				<div class="panel-body">
+					<a href="/students/login/" class="btn btn-primary btn-lg">Student Login</a>
+					<a href="/students/register/" class="btn btn-success btn-lg">Sign up</a>
 				</div>
 			</div>
+		</div>
 
-			<div class="col-md-6">
-				<div class="panel panel-default">
-					<div class="panel-heading">
-						<h2><i class="fa fa-user-circle" aria-hidden="true"></i> Counselors</h2>
-					</div>
-					<div class="panel-body">
-						<a href="/counselors/login/" class="btn btn-primary btn-lg">Counselor Login</a>
-						<a href="/counselors/register/" class="btn btn-success btn-lg">Sign up</a>
-					</div>
+		<div class="col-md-6">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h2><i class="fa fa-user-circle" aria-hidden="true"></i> Counselors</h2>
+				</div>
+				<div class="panel-body">
+					<a href="/counselors/login/" class="btn btn-primary btn-lg">Counselor Login</a>
+					<a href="/counselors/register/" class="btn btn-success btn-lg">Sign up</a>
 				</div>
 			</div>
-		</div><!-- end row -->
-		<br/>
-		<br/>
-		<div class="row">
-			<div class="col-md-offset-4 col-md-4 text-center">
-				<img src="{{ url_for('static', filename='images/hoover_hawks.png') }}" title="Hoover Hawks" alt="Hoover Hawks" class="hawk-logo" width="300" />
-			</div>
 		</div>
-	</div><!-- end container -->
-	<footer class="footer">
-      	<div class="container">
-	        <p class="text-muted">
-	        Made by <span class="team-yellow">Team Yellow</span>:
-			<br/>
-			Dominic, Justin, Kyle, Lawrence, Michelle, Victoria, David, Geoff, Nora, and Ms. Rickey</p>
-			</p>
+	</div><!-- end row -->
+	<br/>
+	<br/>
+	<div class="row">
+		<div class="col-md-offset-4 col-md-4 text-center">
+			<img src="{{ url_for('static', filename='images/hoover_hawks.png') }}" title="Hoover Hawks" alt="Hoover Hawks" class="hawk-logo" width="300" />
 		</div>
-    </footer>
-</body>
-</html>
-
+	</div>
+{% endblock %}

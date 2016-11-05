@@ -1,13 +1,5 @@
-
-
-<!DOCTYPE html>
-<html>
-<head>
-  <title></title>
-  <link href="{{ url_for('static',filename='css/bootstrap.css') }}" rel="stylesheet" media="screen">
-</head>
-<body>
-  view report bullying here!
+{% extends "layout.html" %}
+{% block content %}
 
   <ul>
   {% for report in reports -%}
@@ -25,7 +17,9 @@
         <input name="text" value="reply here">
       <button>submit reply</button>
     </form>
+  {% else %}
+  No bully reports!
   {%- endfor %}
   </ul>
-</body>
-</html>
+
+{% endblock %}

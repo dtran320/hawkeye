@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Hawkeye Anonymous Bully Reporter</title>
+	<link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet" media="screen">
+	<script src="https://use.fontawesome.com/f902328bfc.js"></script>
+	<link href="{{ url_for('static', filename='css/hawkeye.css') }}" rel="stylesheet">
+	{% block additional_head %}
+	{% endblock %}
+</head>
+<body>
+	<div class="container homepage">
+		<h1><a href="/">Hawkeye Anonymous Bully Reporter</a></h1>
+		<br/>
+		<br/>
+		{% block content %}
+		{% endblock %}
+	</div><!-- end container -->
+	<footer class="footer">
+      	<div class="container">
+	        <p class="text-muted">
+	        Made by <span class="team-yellow">Team Yellow</span>:
+			<br/>
+			Dominic, Justin, Kyle, Lawrence, Michelle, Victoria, David, Geoff, Nora, and Ms. Rickey</p>
+			</p>
+		</div>
+    </footer>
+</body>
+</html>
+

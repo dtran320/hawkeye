@@ -1,14 +1,10 @@
+{% extends "layout.html" %}
+{% block additional_head %}
+    <link href="{{ url_for('static',filename='css/messages.css') }}" rel="stylesheet" media="screen">
+{% endblock %}
+{% block content %}
 
-
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Hawkeye Report</title>
-	<link href="{{ url_for('static',filename='css/bootstrap.css') }}" rel="stylesheet" media="screen">
-	<link href="{{ url_for('static',filename='css/messages.css') }}" rel="stylesheet" media="screen">
-</head>
-<body>
-	<div class="container messages-container">
+	<div class="messages-container">
     <div class="row">
       <div class='well'>
         <h3>Hawk Anonymous Bully Reporter</h3>
@@ -45,7 +41,4 @@
     	</div>
   	</div>
 	</div>
-
-</body>
-</html>
-
+{% endblock %}
