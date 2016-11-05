@@ -1,6 +1,7 @@
 from flask import Flask, request
 app = Flask(__name__)
 from flask import render_template
+import random
 
 # Routes
 
@@ -14,7 +15,9 @@ def homepage():
     '''
 @app.route("/report-bullying")
 def report_bullying():
-    return render_template('report-bullying.html')
+    user_id = int(round(random.random() * 10000))
+    form_id = int(round(random.random() * 10000000000))
+    return render_template('report-bullying.html', user_id=user_id, form_id=form_id)
 
 @app.route("/view-bullying-reports")
 def view_report_bullying():
@@ -23,13 +26,15 @@ def view_report_bullying():
 @app.route("/api/submit-report", methods=['POST'])
 def handle_report_submit():
     data = request.form.to_dict()
-    print (data)
+    print data
+#    new_report = {
+#        id: data.id
+#    }
     reports.append(data)
-    return 'report submitted'
+    return 'Thank you for submitting a report, it has been forwarded anonymously to your counselor'
 
 # State
 reports = []
-
 
 
 

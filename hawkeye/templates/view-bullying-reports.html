@@ -1,4 +1,6 @@
 view report bullying here!
+<link href="{{ url_for('static',filename='css/bootstrap.css') }}" rel="stylesheet" media="screen">
+<div class="jumbotron">jumbo</div>
 <ol>
 {% for report in reports -%}
     <li>{{ report.report_text }}</li>
