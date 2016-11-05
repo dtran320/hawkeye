@@ -5,11 +5,6 @@
 {% block content %}
 
 	<div class="messages-container">
-    <div class="row">
-      <div class='well'>
-        <h3>Hawk Anonymous Bully Reporter</h3>
-      </div>
-    </div>
   	<div class="row">
     	<div class="col-md-4 navbar">
         <div class='well'>
@@ -20,23 +15,28 @@
 
     	<div class="col-md-8 messages">
     		<div class="message-view well">
-          <ul>
-            {% for report in user_reports -%}
-              <li> <b>Report number:</b> {{report.report_id}}
-                <ul>
-                  {% for message in report['report_messages'] -%}
-                    <li><b>{{message['sender']}}:</b> {{message['text']}}</li>
-                  {%- endfor %}
-                </ul>
+          {% for report in user_reports -%}
+          <div class='student-message'>
+            <div class="row">
+              <div class="col-md-6">
+              <b>Report number:</b> {{report.report_id}}
+              <ul>
+                {% for message in report['report_messages'] -%}
+                  <li><b>{{message['sender']}}:</b> {{message['text']}}</li>
+                {%- endfor %}
+              </ul>
+              </div>
+              <div class="col-md-6">
                 <form action="/api/submit-reply-student" method="post">
                   <input  type="hidden" name="user_name" value="student">
                   <input  type="hidden" name="report_id" value="{{report.report_id}}">
                   <input name="text" value="reply here">
                   <button>submit reply</button>
                 </form>
-              </li>
-            {%- endfor %}
-          </ul>
+              </div>
+            </div>
+          </div>
+          {%- endfor %}
     		</div>
     	</div>
   	</div>

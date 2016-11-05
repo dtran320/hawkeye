@@ -1,3 +1,12 @@
+.student-message {
+	background-color: #F5F5F5;
+	border-radius: 25px;
+	border: 2px solid #73AD21;
+  padding: 20px; 
+  margin-bottom: 10px;
+}
+
+
 .homepage h1 {	
 	color: #aa0000;
 	text-align: center;
@@ -13,9 +22,13 @@
 	font-weight: bold;
 }
 
+.header-continer{
+	background-color: #2A363B;
+}
+
 .footer {
 	  position: absolute;
-	  bottom: 0;
+	  /*bottom: 0;*/
 	  width: 100%;
 	  /* Set the fixed height of the footer here */
 	  height: 60px;
@@ -25,3 +38,4 @@
 img.hawk-logo {
 	width: 300px;
 }
+
