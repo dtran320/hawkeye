@@ -7,15 +7,23 @@
 	<link href="{{ url_for('static',filename='css/bootstrap.css') }}" rel="stylesheet" media="screen">
 </head>
 <body>
-
-	<div class = "navbar">
-		<p>My messages</p>
+	
+  	<div class="col-md-4">
+  		<div class="upload">
+  			UPLOAD
+  		</div>
+  		<div class="archive">
+  			<p>My messages</p>
+  		</div>
+		
 	</div>
 
-	<div class = "messaging">
-		<p>
-			Mesage 1, Message 2
-		</p>
+	<div class="col-md-8">
+		<div class="messView">
+			<p>
+				Mesage 1, Message 2
+			</p>
+		</div>
 		<form action="/api/submit-report" method="post">
 		  <input name="id" value="123">
 		  <input name="report_text" value="desribe bullying">

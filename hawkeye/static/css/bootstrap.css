@@ -11,8 +11,17 @@ html {
 }
 body {
   margin: 0;
+  height: 100%;
 }
 article,
+div.archive{
+  background: orange;
+  height: 80%;
+}
+div.messView{
+  background: yellow;
+  height: 80%;
+}
 aside,
 details,
 figcaption,
