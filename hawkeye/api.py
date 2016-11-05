@@ -35,9 +35,7 @@ def handle_report_submit():
             'text': data['report_text']
         }]
     }
-    print reports
-    reports.append(new_report)
->>>>>>> cbdd563cd97149d0dce54430e94a04c976d24e50
+    print (reports)
     return 'Thank you for submitting a report, it has been forwarded anonymously to your counselor'
 
 @app.route("/api/submit-reply", methods=['POST'])
@@ -50,13 +48,13 @@ def handle_reply_submit():
 def append_message_to_report(data):
     for x in range(len(reports)):
         if reports[x]['report_id'] == data['report_id']:
-            print 'in this if'
+            print ('in this if')
             reports[x]['report_messages'].append({
                 'sender': data['user_name'],
                 'text': data['text']
             })
-    print 'new report data'
-    print reports
+    print ('new report data')
+    print (reports)
 
 # State
 reports = []
