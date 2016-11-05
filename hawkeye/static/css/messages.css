@@ -28,3 +28,15 @@ ul.reports-sidebar li {
 .messages-sidebar {
 	background: #f5f5f5;
 }
+
+ul.chat {
+	list-style: none;
+}
+
+.message {
+	border-radius: 25px;
+	border: 2px solid #73AD21;
+	padding: 20px; 
+	margin-bottom: 10px;
+	clear: both;
+}
