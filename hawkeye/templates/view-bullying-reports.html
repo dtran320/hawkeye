@@ -14,22 +14,31 @@
   </div>
 
   <div class="col-md-9">
-  <ul>
   {% for report in reports -%}
-      <li>{{ report.user_id }}</li>
-      <ul>
+    <h3>{{ report.user_id }}</h3>
+      <ul class="chat">
         {% for message in report.report_messages -%}
-
-          <li><b>{{message.sender}}:</b> {{message.text}}</li>
-
+          {% if message.sender == "student" %}
+          <li><div class="panel panel-default message student-message">
+          {{message.sender}}:<br/>
+          {{message.text}}
+          </li>
+          {% else %}
+          <li><div class="panel panel-primary message counselor-message">
+          {{message.sender}}:<br/>
+          {{message.text}}
+          </li>
+          {% endif %}
         {%- endfor %}
       </ul>
       <div class="reply">
         <form action="/api/submit-reply-counselor" method="post">
           <input type="hidden" name="user_name" placeholder="counselor">
           <input type="hidden" name="report_id" value="{{report.report_id}}">
-          <input name="text" value="Your message...">
-        <button class="btn btn-primary">submit reply</button>
+          <textarea name="text" class="form-control message-report" placeholder="What else do you remember?">
+            
+          </textarea>
+        <button class="btn btn-success">Submit Reply</button>
         </form>
       </div>
   {% else %}
