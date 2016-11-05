@@ -18,6 +18,7 @@
 
 ul.reports-sidebar {
 	list-style:none;
+	padding: 0;
 }
 
 ul.reports-sidebar li {
@@ -30,11 +31,15 @@ ul.reports-sidebar li {
 }
 
 .selected {
-	background: #ADD8E6;
+	background:#C2DFFF;
 }
 
 ul.chat {
 	list-style: none;
+}
+
+.messages-sidebar {
+	padding: 0;
 }
 
 .message {
