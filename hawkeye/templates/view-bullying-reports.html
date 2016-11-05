@@ -55,8 +55,14 @@
 </div>
 
 <script type="text/javascript">
- $("#report-627").show();
- $("#show-report-627").parent().addClass('selected');
+{% if show_id %}
+  $("#show-report-{{show_id}}").parent().addClass('selected');
+  $("#report-{{show_id}}").show();
+{% else %}
+   $("#report-627").show();
+   $("#show-report-627").parent().addClass('selected');
+{% endif %}
+ 
   $(".show-report").click(function() {
     $('.show-report').parent().removeClass('selected');
     $(this).parent().addClass('selected');
