@@ -16,7 +16,7 @@ def homepage():
 @app.route("/user-home")
 def user_home():
     user_reports = get_user_reports()
-    print user_reports
+    print (user_reports)
     return render_template('user-home.html', user_id=user_id, user_reports=user_reports)
 
 @app.route("/submit-report")
@@ -70,8 +70,8 @@ def append_message_to_report(data):
 
 def get_user_reports():
     user_reports = []
-    print reports
-    print user_id
+    print (reports)
+    print (user_id)
     for report in reports:
         if report['user_id'] == str(user_id):
             user_reports.append(report)
