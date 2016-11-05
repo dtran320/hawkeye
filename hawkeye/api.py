@@ -35,6 +35,7 @@ def handle_report_submit():
             'text': data['report_text']
         }]
     }
+    reports.append(new_report)
     print (reports)
     return 'Thank you for submitting a report, it has been forwarded anonymously to your counselor'
 
@@ -58,8 +59,6 @@ def append_message_to_report(data):
 
 # State
 reports = []
-
-
 
 
 # launch app
