@@ -27,11 +27,23 @@ def view_report_bullying():
 def handle_report_submit():
     data = request.form.to_dict()
     print data
-#    new_report = {
-#        id: data.id
-#    }
-    reports.append(data)
+    new_report = {
+        'user_id': data['user_id'], 
+        'report_id': data['report_id'],
+        'report_messages': [{
+            'sender': 'student',
+            'text': data['report_text']
+        }]
+    }
+    print reports
+    reports.append(new_report)
     return 'Thank you for submitting a report, it has been forwarded anonymously to your counselor'
+
+@app.route("/api/submit-reply", methods=['POST'])
+def handle_reply_submit():
+    data = request.form.to_dict()
+    print data
+    return 'reply sent'
 
 # State
 reports = []
