@@ -85,6 +85,14 @@ reports = [
             {'sender': 'student', 'text': 'I heard Cartman make fun of Stan\'s Jewish heritage.'},
             {'sender': 'counselor', 'text': 'When and where did you hear this?'},
         ],
+    },
+    {
+        'user_id': 729,
+        'report_id': 'b',
+        'report_messages': [
+            {'sender': 'student', 'text': 'I felt very upset when Cartman made fun of Kyle on Instagram.'},
+            {'sender': 'counselor', 'text': 'Could you please send me the link to the post?'},
+        ],
     }
 ]
 
