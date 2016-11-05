@@ -45,7 +45,7 @@ def handle_report_submit():
         }]
     }
     reports.append(new_report)
-    return '<p>Thank you for submitting a report, it has been forwarded anonymously to your counselor</p><a href="/user-home">Return Home</a>'
+    return '<p>Thank you for submitting a report, it has been forwarded anonymously to your counselor</p><a href="/students/home">Return Home</a>'
 
 @app.route("/api/submit-reply-counselor", methods=['POST'])
 def handle_reply_submit_c():

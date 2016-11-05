@@ -1,9 +1,5 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title></title>
-</head>
-<body>
+{% extends "layout.html" %}
+{% block content %}
 <h3>Describe the bullying incident you witnessed</h3>
 <form class="message-form" action="/api/submit-report" method="post">
       <input  name="user_id" value="{{user_id}}">
@@ -11,6 +7,4 @@
       <input name="report_text" value="desribe bullying">
       <button>submit report</button>
 </form>
-
-</body>
-</html>
+{% endblock %}
