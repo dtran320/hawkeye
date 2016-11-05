@@ -36,6 +36,7 @@
       <div class="reply">
         <form action="/api/submit-reply-counselor" method="post">
           <input type="hidden" name="user_name" value="counselor">
+          <input type="hidden" name="user_id" value="{{report.user_id}}">
           <input type="hidden" name="report_id" value="{{report.report_id}}">
           <textarea name="text" class="form-control message-report" placeholder="What else do you remember?">
             

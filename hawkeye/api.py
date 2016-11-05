@@ -28,7 +28,6 @@ def submit_report():
 @app.route("/view-bullying-reports")
 def view_bullying_reports():
     show_id = request.args.get('msg_id')
-    print show_id
     return render_template('view-bullying-reports.html', reports=reports, show_id=show_id)
 
 @app.route('/counselors/login/')
@@ -53,8 +52,7 @@ def handle_report_submit():
 def handle_reply_submit_c():
     data = request.form.to_dict()
     append_message_to_report(data)
-    msg_id = data['report_id'];
-    print(msg_id)
+    msg_id = data['user_id']
     return redirect(url_for('view_bullying_reports') + '?msg_id=' + msg_id)
 
 @app.route("/api/submit-reply-student", methods=['POST'])
