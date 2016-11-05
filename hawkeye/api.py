@@ -9,15 +9,20 @@ import random
 def homepage():
     return '''
     <ol>
-        <li><a href="/report-bullying">report bullying</a></li>
+        <li><a href="/user-home">report bullying</a></li>
         <li><a href="/view-bullying-reports">view reports</a></li>
     </ol>
     '''
-@app.route("/report-bullying")
-def report_bullying():
-    user_id = int(round(random.random() * 10000))
+@app.route("/user-home")
+def user_home():
+    user_reports = get_user_reports()
+    print user_reports
+    return render_template('user-home.html', user_id=user_id, user_reports=user_reports)
+
+@app.route("/submit-report")
+def submit_report():
     form_id = int(round(random.random() * 10000000000))
-    return render_template('report-bullying.html', user_id=user_id, form_id=form_id)
+    return render_template('submit-report.html',  user_id=user_id, form_id=form_id) 
 
 @app.route("/view-bullying-reports")
 def view_bullying_reports():
@@ -37,13 +42,19 @@ def handle_report_submit():
     }
     reports.append(new_report)
     print (reports)
-    return 'Thank you for submitting a report, it has been forwarded anonymously to your counselor'
+    return '<p>Thank you for submitting a report, it has been forwarded anonymously to your counselor</p><a href="/user-home">Return Home</a>'
 
-@app.route("/api/submit-reply", methods=['POST'])
-def handle_reply_submit():
+@app.route("/api/submit-reply-counselor", methods=['POST'])
+def handle_reply_submit_c():
     data = request.form.to_dict()
     append_message_to_report(data)
     return redirect(url_for('view_bullying_reports'))
+
+@app.route("/api/submit-reply-student", methods=['POST'])
+def handle_reply_submit_s():
+    data = request.form.to_dict()
+    append_message_to_report(data)
+    return redirect(url_for('user_home'))
 
 ## Helpers
 def append_message_to_report(data):
@@ -57,7 +68,17 @@ def append_message_to_report(data):
     print ('new report data')
     print (reports)
 
+def get_user_reports():
+    user_reports = []
+    print reports
+    print user_id
+    for report in reports:
+        if report['user_id'] == str(user_id):
+            user_reports.append(report)
+    return user_reports
+
 # State
+user_id = int(round(random.random() * 10000))
 reports = []
 
 

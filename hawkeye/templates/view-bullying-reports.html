@@ -19,7 +19,7 @@
 
         {%- endfor %}
       </ul>
-      <form action="/api/submit-reply" method="post">
+      <form action="/api/submit-reply-counselor" method="post">
         <input  type="hidden" name="user_name" value="counselor">
         <input  type="hidden" name="report_id" value="{{report.report_id}}">
         <input name="text" value="reply here">

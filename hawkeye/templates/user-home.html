@@ -1,0 +1,51 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hawkeye Report</title>
+	<link href="{{ url_for('static',filename='css/bootstrap.css') }}" rel="stylesheet" media="screen">
+	<link href="{{ url_for('static',filename='css/messages.css') }}" rel="stylesheet" media="screen">
+</head>
+<body>
+	<div class="container messages-container">
+    <div class="row">
+      <div class='well'>
+        <h3>Hawk Anonomous Bully Reporter</h3>
+      </div>
+    </div>
+  	<div class="row">
+    	<div class="col-md-4 navbar">
+        <div class='well'>
+          <a href="/submit-report"><h4>Submit new report</h4></a>
+        </div>
+  		
+  	 </div>
+
+    	<div class="col-md-8 messages">
+    		<div class="message-view">
+          <ul>
+            {% for report in user_reports -%}
+              <li> <b>Report number:</b> {{report.report_id}}
+                <ul>
+                  {% for message in report['report_messages'] -%}
+                    <li><b>{{message['sender']}}:</b> {{message['text']}}</li>
+                  {%- endfor %}
+                </ul>
+                <form action="/api/submit-reply-student" method="post">
+                  <input  type="hidden" name="user_name" value="student">
+                  <input  type="hidden" name="report_id" value="{{report.report_id}}">
+                  <input name="text" value="reply here">
+                  <button>submit reply</button>
+                </form>
+              </li>
+            {%- endfor %}
+          </ul>
+    		</div>
+    	</div>
+  	</div>
+	</div>
+
+</body>
+</html>
+
