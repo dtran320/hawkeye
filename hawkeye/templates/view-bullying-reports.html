@@ -1,1 +1,6 @@
 view report bullying here!
+<ol>
+{% for report in reports -%}
+    <li>{{ report }}</li>
+{%- endfor %}
+</ol>
