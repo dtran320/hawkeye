@@ -8,7 +8,7 @@
   	<div class="row">
     	<div class="col-md-4 navbar">
         <div class='well'>
-          <a href="/submit-report"><h4>Submit new report</h4></a>
+          <a href="/submit-report"><h4><i class="fa fa-plus-square" aria-hidden="true"></i> Submit new report</h4></a>
         </div>
   		
   	 </div>
@@ -30,7 +30,7 @@
                 <form action="/api/submit-reply-student" method="post">
                   <input  type="hidden" name="user_name" value="student">
                   <input  type="hidden" name="report_id" value="{{report.report_id}}">
-                  <input name="text" value="reply here">
+                  <input name="text" placeholder="reply here...">
                   <button>submit reply</button>
                 </form>
               </div>
