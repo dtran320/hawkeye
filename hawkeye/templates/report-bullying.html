@@ -1,6 +1,28 @@
 
-<form action="/api/submit-report" method="post">
-  <input name="id" value="123">
-  <input name="report_text" value="desribe bullying">
-  <button>submit report</button>
-</form>
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hawkeye Report</title>
+	<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+</head>
+<body>
+
+	<div class = "navbar">
+		<p>My messages</p>
+	</div>
+
+	<div class = "messaging">
+		<p>
+			Mesage 1, Message 2
+		</p>
+		<form action="/api/submit-report" method="post">
+		  <input name="id" value="123">
+		  <input name="report_text" value="desribe bullying">
+		  <button>submit report</button>
+		</form>
+	</div>
+
+</body>
+</html>
+
