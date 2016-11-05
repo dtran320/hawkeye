@@ -14,5 +14,17 @@
 
 .upload {
 	height: 100px;
-	
+}
+
+ul.reports-sidebar {
+	list-style:none;
+}
+
+ul.reports-sidebar li {
+	padding: 30px;
+	font-size: 36px;
+}
+
+.messages-sidebar {
+	background: #f5f5f5;
 }

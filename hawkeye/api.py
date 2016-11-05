@@ -37,7 +37,7 @@ def counselors_login():
 def handle_report_submit():
     data = request.form.to_dict()
     new_report = {
-        'user_id': data['user_id'], 
+        'user_id': data['user_id'],
         'report_id': data['report_id'],
         'report_messages': [{
             'sender': 'student',
@@ -75,9 +75,18 @@ def get_user_reports():
             user_reports.append(report)
     return user_reports
 
-# State
+# Initialize state with some fake reports
 user_id = int(round(random.random() * 10000))
-reports = []
+reports = [
+    {
+        'user_id': 627,
+        'report_id': 'a',
+        'report_messages': [
+            {'sender': 'student', 'text': 'I heard Cartman make fun of Stan\'s Jewish heritage.'},
+            {'sender': 'counselor', 'text': 'When and where did you hear this?'},
+        ],
+    }
+]
 
 
 # launch app
