@@ -17,7 +17,7 @@
 			Mesage 1, Message 2
 		</p>
 		<form action="/api/submit-report" method="post">
-		  <input name="id" value="123">
+		  <input  type="hidden" name="id" value="{{id}}">
 		  <input name="report_text" value="desribe bullying">
 		  <button>submit report</button>
 		</form>
