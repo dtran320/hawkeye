@@ -1,8 +1,31 @@
-view report bullying here!
-<link href="{{ url_for('static',filename='css/bootstrap.css') }}" rel="stylesheet" media="screen">
-<div class="jumbotron">jumbo</div>
-<ol>
-{% for report in reports -%}
-    <li>{{ report.report_text }}</li>
-{%- endfor %}
-</ol>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <link href="{{ url_for('static',filename='css/bootstrap.css') }}" rel="stylesheet" media="screen">
+</head>
+<body>
+  view report bullying here!
+
+  <ul>
+  {% for report in reports -%}
+      <li>{{ report.user_id }}</li>
+      <ul>
+        {% for message in report.report_messages -%}
+
+          <li><b>{{message.sender}}:</b> {{message.text}}</li>
+
+        {%- endfor %}
+      </ul>
+      <form action="/api/submit-reply" method="post">
+        <input  type="hidden" name="user_name" value="counselor">
+        <input  type="hidden" name="report_id" value="{{report.report_id}}">
+        <input name="text" value="reply here">
+      <button>submit reply</button>
+    </form>
+  {%- endfor %}
+  </ul>
+</body>
+</html>
