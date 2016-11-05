@@ -17,7 +17,7 @@ def report_bullying():
 
 @app.route("/view-bullying-reports")
 def view_report_bullying():
-    return render_template('view-bullying-reports.html')
+    return render_template('view-bullying-reports.html') 
 
 if __name__ == "__main__":
     app.run()
