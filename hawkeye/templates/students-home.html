@@ -31,11 +31,13 @@
                   <input  type="hidden" name="user_name" value="student">
                   <input  type="hidden" name="report_id" value="{{report.report_id}}">
                   <input name="text" placeholder="reply here...">
-                  <button>submit reply</button>
+                  <button class="btn btn-success"><i class="fa fa-envelope" aria-hidden="true"></i> submit</button>
                 </form>
               </div>
             </div>
           </div>
+          {% else %}
+            No reports submitted!
           {%- endfor %}
     		</div>
     	</div>
