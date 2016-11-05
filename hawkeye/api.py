@@ -10,10 +10,14 @@ import random
 def homepage():
     return render_template('homepage.html')
 
-@app.route("/user-home")
+@app.route('/students/login/')
+def students_login():
+    return render_template('students-login.html')
+
+@app.route("/students/home")
 def user_home():
     user_reports = get_user_reports()
-    return render_template('user-home.html', user_id=user_id, user_reports=user_reports)
+    return render_template('students-home.html', user_id=user_id, user_reports=user_reports)
 
 @app.route("/submit-report")
 def submit_report():
@@ -24,17 +28,10 @@ def submit_report():
 def view_bullying_reports():
     return render_template('view-bullying-reports.html', reports=reports) 
 
-@app.route('/students/login/')
-def students_login():
-    return render_template('students-login.html')
 
 @app.route('/counselors/login/')
 def counselors_login():
     return render_template('counselors-login.html')
-
-@app.route("/report-bullying")
-def report_bullying():
-    return render_template('report-bullying.html')
 
 @app.route("/view-bullying-reports")
 def view_report_bullying():
