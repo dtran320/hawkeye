@@ -19,5 +19,10 @@ def report_bullying():
 def view_report_bullying():
     return render_template('view-bullying-reports.html') 
 
+@app.route("/api/submit-report")
+def handle_report_submit():
+    print 'report submitted'
+    return 'report submitted'
+
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)
