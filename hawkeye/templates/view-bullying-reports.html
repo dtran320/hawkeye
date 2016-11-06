@@ -6,7 +6,7 @@
 {% block content %}
 
 <div class="row">
-    <div class="col-md-2 messages-sidebar">
+    <div class="col-md-3 col-xs-3 messages-sidebar">
     <ul class="reports-sidebar">
     {% for report in reports -%}
        <li><a href="#" class="show-report" id="show-report-{{ report.user_id }}"> {{ report.user_id }}</a></li>
@@ -14,7 +14,7 @@
     </ul>
   </div>
 
-  <div class="col-md-10">
+  <div class="col-md-9 col-xs-9">
   {% for report in reports -%}
     <div id="report-{{ report.user_id }}" class="report-chat">
     <h3>{{ report.user_id }}</h3>
